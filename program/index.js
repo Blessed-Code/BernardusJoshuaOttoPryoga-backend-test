@@ -13,6 +13,29 @@ function Generator(input) {
     return result
 }
 
+let genMap = new Set()
+let currJuncNum = 0
+let counter = 1
+while (currJuncNum < 5000) {
+    let junNum = Generator(counter)
+    if (!genMap.has(junNum)) {
+        genMap.add(junNum)
+    }
+    currJuncNum = junNum
+    counter++
+}
 
+let selfMap = new Set()
+counter = 1
+let result = 0
+while(counter < 5000) {
+    if (!genMap.has(counter)) {
+        selfMap.add(counter)
+        result += counter
+    }
+    counter++
+}
 
-console.log(Generator(1));
+console.log(genMap, "genMap");
+console.log(selfMap, "selfMap");
+console.log(result);
