@@ -13,4 +13,6 @@ function Generator(input) {
     return result
 }
 
-console.log(Generator(805));
+
+
+console.log(Generator(1));
